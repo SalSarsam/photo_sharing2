@@ -1,0 +1,23 @@
+<h1>Listing Comments</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @addcomments.each do |addcomment| %>
+  <tr>
+    <td><%= addcomment.content %></td>
+    <td><%= link_to 'Show', addcomment %></td>
+    <td><%= link_to 'Edit', edit_addcomment_path(addcomment) %></td>
+    <td><%= link_to 'Destroy', addcomment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Addcomment', new_addcomment_path %>

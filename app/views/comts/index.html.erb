@@ -1,0 +1,41 @@
+<h1>Sharing Posts and Photos</h1>
+<%= flash[:notice] %>
+<%= form_tag comts_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :title => nil %>
+  </p>
+<% end %>
+
+<table>
+ 
+    <th>Name</th>
+    <th>Post</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comts.each do |comt| %>
+  <tr>
+    <td><b>
+<%= comt.title %></b></td>
+    Created on: <%= formatted_date comt.created_at %>
+   </td></th><td><%= comt.content %></td>
+     </table>
+
+    <th></th> <th><%= link_to 'Show', comt %></th>
+    <th><%= link_to 'Edit', edit_comt_path(comt) %></th>
+      </td>
+    
+     <hr />
+
+<table>
+<br />
+      </tr>
+<% end %>
+
+</table>
+<br />
+
+<%= link_to 'New', new_comt_path %>

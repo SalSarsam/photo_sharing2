@@ -1,0 +1,9 @@
+<h1>Editing Posts and Photos </h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @comt %> |
+  <td><%= link_to 'Delete', @comt, method: :delete, data: { confirm: 'Are you sure?' } %> |
+
+<%= link_to 'Back', comts_path %>
+
